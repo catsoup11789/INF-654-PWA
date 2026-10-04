@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Void</title>
+    <meta
+      name="description"
+      content="The Void: ask Marvin a question, shake for a verdict, and enjoy a grumpy answer."
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="home-page">
+    <main class="app-shell container">
+      <section class="top-strip">
+        <div class="brand-lockup">
+          <div>
+            <h1 class="page-title">Marvin is listening, reluctantly.</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="surface-card hero-copy">
+        <div class="input-field">
+          <label for="question">Ask Marvin a question</label>
+          <input id="question" type="text" class="validate" placeholder="Should I finish my homework or spiral into doom-scrolling?" />
+        </div>
+
+        <div class="action-row">
+          <button class="btn accent-btn waves-effect waves-light" type="button">
+            Ask Marvin
+          </button>
+        </div>
+
+        <div class="response-box" aria-live="polite">
+          <h3>Marvin’s response</h3>
+          <p class="response-main">
+            Marvin has no opinion yet. This is somehow still your problem.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-tabs" aria-label="Primary navigation">
+      <div class="tabs-grid">
+        <a class="tab-link active" href="index.html" aria-current="page">
+          <span class="tab-icon" aria-hidden="true">🏠</span>
+          <span class="tab-label">Home</span>
+        </a>
+        <a class="tab-link" href="history.html">
+          <span class="tab-icon" aria-hidden="true">📜</span>
+          <span class="tab-label">History</span>
+        </a>
+        <a class="tab-link" href="control.html">
+          <span class="tab-icon" aria-hidden="true">⚙️</span>
+          <span class="tab-label">Control</span>
+        </a>
+        <a class="tab-link" href="about.html">
+          <span class="tab-icon" aria-hidden="true">🛰️</span>
+          <span class="tab-label">About</span>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>
+

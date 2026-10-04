@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Void | Control Panel</title>
+    <meta name="description" content="The Void control panel with Marvin settings and permissions audit." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="app-shell container">
+      <section class="top-strip">
+        <div class="brand-lockup">
+          <div>
+            <h1 class="page-title">Control Panel</h1>
+            <p class="page-subtitle">Adjust Marvin’s nonsense knobs here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid control-stack">
+        <article class="surface-panel span-12">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">History maintenance</h2>
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="btn accent-btn waves-effect waves-light" type="button">Clear history log</button>
+          </div>
+        </article>
+
+        <article class="surface-panel span-7">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Shake sensitivity</h2>
+              <p class="section-copy">Accessibility control for how much motion Marvin needs before reacting.</p>
+            </div>
+          </div>
+
+          <div class="range-field">
+            <label for="sensitivity">Shake threshold</label>
+            <input id="sensitivity" type="range" min="1" max="10" value="5" />
+            <p class="muted">Current setting: medium nonsense detection. Lower values would react faster, higher values would demand more chaos.</p>
+          </div>
+
+          <div class="switch">
+            <label>
+              Motion shake off
+              <input type="checkbox" />
+              <span class="lever"></span>
+              Motion shake on
+            </label>
+          </div>
+        </article>
+
+        <article class="surface-panel span-5">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Permissions audit</h2>
+              <p class="section-copy">A future diagnostic area for motion, voice, and notification permissions.</p>
+            </div>
+          </div>
+
+          <ul class="collection">
+            <li class="collection-item">
+              <strong>Motion sensors</strong>
+              <span class="secondary-content">Status: not yet requested</span>
+            </li>
+            <li class="collection-item">
+              <strong>Microphone</strong>
+              <span class="secondary-content">Status: not yet requested</span>
+            </li>
+            <li class="collection-item">
+              <strong>Notifications</strong>
+              <span class="secondary-content">Status: not yet requested</span>
+            </li>
+          </ul>
+        </article>
+
+      </section>
+    </main>
+
+    <nav class="bottom-tabs" aria-label="Primary navigation">
+      <div class="tabs-grid">
+        <a class="tab-link" href="index.html">
+          <span class="tab-icon" aria-hidden="true">🏠</span>
+          <span class="tab-label">Home</span>
+        </a>
+        <a class="tab-link" href="history.html">
+          <span class="tab-icon" aria-hidden="true">📜</span>
+          <span class="tab-label">History</span>
+        </a>
+        <a class="tab-link active" href="control.html" aria-current="page">
+          <span class="tab-icon" aria-hidden="true">⚙️</span>
+          <span class="tab-label">Control</span>
+        </a>
+        <a class="tab-link" href="about.html">
+          <span class="tab-icon" aria-hidden="true">🛰️</span>
+          <span class="tab-label">About</span>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>
+
