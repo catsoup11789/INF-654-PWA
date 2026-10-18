@@ -3,65 +3,239 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Void</title>
+    <meta name="theme-color" content="#020307" />
     <meta
       name="description"
       content="The Void: ask Marvin a question, shake for a verdict, and enjoy a grumpy answer."
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <title>The Void</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="assets/icons/the-void-icon-192.png" />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/app.js"></script>
   </head>
-  <body class="home-page">
-    <main class="app-shell container">
-      <section class="top-strip">
+  <body class="void-home">
+    <div class="page-frame">
+      <header class="topbar">
         <div class="brand-lockup">
-          <div>
-            <h1 class="page-title">Marvin is listening, reluctantly.</h1>
+          <img src="assets/images/the-void.png" alt="The Void logo" class="brand-logo" />
+          <span class="mobile-brand-mark" aria-hidden="true"></span>
+          <span class="mobile-brand-word" aria-hidden="true">the void.</span>
+        </div>
+
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="index.html" class="active nav-pill" aria-current="page">
+            <img src="assets/images/ask.svg" alt="Ask" class="nav-icon-svg" />
+            <span>Ask</span>
+          </a>
+          <a href="history.html" class="nav-pill">
+            <img src="assets/images/log.svg" alt="Log" class="nav-icon-svg" />
+            <span>Log</span>
+          </a>
+          <a href="control.html" class="nav-pill">
+            <img src="assets/images/controls.svg" alt="Controls" class="nav-icon-svg" />
+            <span>Controls</span>
+          </a>
+          <a href="about.html" class="nav-pill">
+            <img src="assets/images/about.svg" alt="About" class="nav-icon-svg" />
+            <span>About</span>
+          </a>
+        </nav>
+
+        <div class="status-pill" role="group" aria-label="Application status" data-app-status>
+          <span class="status-field" data-status-field="connection">
+            <span class="status-light" data-connection-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Connection</span>
+              <span class="status-value" data-connection-state>Online</span>
+            </span>
+          </span>
+          <span class="status-field" data-status-field="readiness">
+            <span class="status-light" data-readiness-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Offline readiness</span>
+              <span class="status-value" data-offline-readiness>Saving...</span>
+            </span>
+          </span>
+          <span class="status-announcer" data-status-announcer role="status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+      </header>
+
+      <main class="void-main container">
+        <section class="hero-panel">
+          <div class="hero-copy-wrap">
+            <p class="eyebrow">
+              <span class="initial-copy">Low-stakes decisions, high-level apathy.</span>
+              <span class="revealed-copy">Transmission received</span>
+            </p>
+            <h1 class="hero-title">
+              <span class="initial-copy">Tiny dilemma.<br />Infinite apathy.</span>
+              <span class="revealed-copy">The universe<br />has spoken.</span>
+            </h1>
+
+            <div class="orb-stage" aria-label="Marvin's processing art">
+              <img src="assets/images/supercomputer-a.jpg" alt="Processing orb" class="orb-image" />
+              <div class="meta-row">
+                <span>M / RVN—01</span>
+                <span class="status-available">
+                  <span class="initial-copy">Existentially available</span>
+                  <span class="revealed-copy">Verdict transmitted</span>
+                </span>
+              </div>
+
+              <div class="enthusiasm-row">
+                <span>
+                  <span class="initial-copy">Enthusiasm: 0.003%</span>
+                  <span class="revealed-copy">Effort expended: negligible</span>
+                </span>
+                <div class="signal-bars" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="submitted-question revealed-state" aria-live="polite">
+              <p>You asked</p>
+              <p id="submitted-question">Should I order pizza or cook tonight?</p>
+            </div>
+
+            <blockquote class="quote-line">“All this processing power. And you ask me this.”</blockquote>
           </div>
-        </div>
-      </section>
 
-      <section class="surface-card hero-copy">
-        <div class="input-field">
-          <label for="question">Ask Marvin a question</label>
-          <input id="question" type="text" class="validate" placeholder="Should I finish my homework or spiral into doom-scrolling?" />
-        </div>
+          <div class="question-column">
+            <div class="panel-head">
+              <span>01 / submit your tiny crisis</span>
+              <span>Input ready</span>
+            </div>
 
-        <div class="action-row">
-          <button class="btn accent-btn waves-effect waves-light" type="button">
-            Ask Marvin
-          </button>
-        </div>
+            <div class="assistant-panel">
+              <div class="question-field">
+                <label for="question">Your question</label>
+                <textarea id="question" rows="2">Should I order pizza or cook tonight?</textarea>
+              </div>
 
-        <div class="response-box" aria-live="polite">
-          <h3>Marvin’s response</h3>
-          <p class="response-main">
-            Marvin has no opinion yet. This is somehow still your problem.
-          </p>
-        </div>
-      </section>
-    </main>
+              <div class="panel-divider" aria-hidden="true"></div>
 
-    <nav class="bottom-tabs" aria-label="Primary navigation">
-      <div class="tabs-grid">
-        <a class="tab-link active" href="index.html" aria-current="page">
-          <span class="tab-icon" aria-hidden="true">🏠</span>
-          <span class="tab-label">Home</span>
+              <div class="question-actions">
+                <span class="mini-tag">Food dilemma</span>
+                <button class="mic-btn" type="button" aria-label="Dictate question" aria-pressed="false">
+                  <img src="assets/images/mic.svg" alt="" />
+                  <span class="dictate-label">Dictate</span>
+                </button>
+              </div>
+              <p class="dictation-feedback" id="dictation-feedback" role="status" aria-live="polite"></p>
+            </div>
+
+            <button class="consult-btn" type="button">
+              <span>Consult the void</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <div class="shake-note">
+              <img src="assets/images/vibrate.svg" alt="" />
+              <span>Or shake to decide. Enable motion in Controls.</span>
+            </div>
+
+            <p class="connection-copy" data-connection-copy>Connected. Unfortunately still available.</p>
+
+            <p class="assist-note">Click to reveal a decision. No shaking your computer required.</p>
+
+            <div class="preference-block">
+              <p class="preference-label">Prefer to speak?</p>
+              <p>
+                Dictate turns speech into editable text. Microphone denied? Allow it in your browser’s site settings,
+                then reload. You can always type.
+              </p>
+              <p>
+                On mobile, shake to decide. Enable motion in Controls. Less wrist, same wisdom.
+              </p>
+            </div>
+
+            <section class="verdict-panel revealed-state" aria-live="polite" aria-label="Marvin's verdict">
+              <div class="verdict-meta">
+                <span>Marvin’s verdict</span>
+                <span><span id="verdict-category">Food</span> / <span id="verdict-sequence">001</span></span>
+              </div>
+              <h2 class="verdict-answer" id="verdict-answer">Order the pizza.</h2>
+              <p class="verdict-commentary" id="verdict-commentary">The heat death of the universe can wait. Apparently, dinner cannot.</p>
+              <div class="verdict-playback">
+                <div class="verdict-divider" aria-hidden="true"></div>
+                <button class="verdict-read-aloud" type="button" aria-pressed="false">
+                  <picture>
+                    <source media="(max-width: 620px)" srcset="assets/images/revealed-volume.svg" />
+                    <img src="assets/images/history-read-aloud.svg" alt="" />
+                  </picture>
+                  <span class="verdict-read-label">Read aloud</span>
+                  <span class="verdict-duration">~ 6 sec</span>
+                </button>
+                <p class="voice-feedback" id="voice-feedback" role="status" aria-live="polite"></p>
+              </div>
+            </section>
+
+            <div class="revealed-actions revealed-state">
+              <button class="ask-again" type="button">
+                <span>Ask another question</span>
+                <img src="assets/images/history-external-link.svg" alt="" />
+              </button>
+              <div class="filed-confirmation" id="save-confirmation" role="status" aria-live="polite">
+                <picture>
+                  <source media="(max-width: 620px)" srcset="assets/images/revealed-check-mobile.svg" />
+                  <img src="assets/images/revealed-check-desktop.svg" alt="" />
+                </picture>
+                <span>Saved on this device</span>
+              </div>
+            </div>
+
+            <div class="saved-timestamp revealed-state">
+              <span data-answer-timestamp>18 Oct 2026 / 09:41</span>
+              <span>Local answer</span>
+            </div>
+          </div>
+
+          <div class="decision-footnote revealed-state">
+            <p>A small nudge with a very large sigh. Not life advice.</p>
+            <p>Processing complete. Regrettably.</p>
+          </div>
+
+          <div class="category-row" aria-label="Dilemma categories">
+            <span>Small problems. Matching sigh.</span>
+            <span>Food</span>
+            <span>Spending</span>
+            <span>Work / study</span>
+            <span>The unknown</span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-meta">
+        <span>the void / v.1.0 / cosmically unnecessary</span>
+        <span>low stakes, local orbit. large sigh.</span>
+      </footer>
+
+      <nav class="mobile-tabbar" aria-label="Main navigation">
+        <a href="index.html" class="mobile-tab active" aria-current="page">
+          <img src="assets/images/orbit.svg" alt="" class="mobile-tab-icon" />
+          <span>Ask</span>
         </a>
-        <a class="tab-link" href="history.html">
-          <span class="tab-icon" aria-hidden="true">📜</span>
-          <span class="tab-label">History</span>
+        <a href="history.html" class="mobile-tab">
+          <img src="assets/images/log.svg" alt="" class="mobile-tab-icon" />
+          <span>Log</span>
         </a>
-        <a class="tab-link" href="control.html">
-          <span class="tab-icon" aria-hidden="true">⚙️</span>
-          <span class="tab-label">Control</span>
+        <a href="control.html" class="mobile-tab">
+          <img src="assets/images/controls.svg" alt="" class="mobile-tab-icon" />
+          <span>Controls</span>
         </a>
-        <a class="tab-link" href="about.html">
-          <span class="tab-icon" aria-hidden="true">🛰️</span>
-          <span class="tab-label">About</span>
+        <a href="about.html" class="mobile-tab">
+          <img src="assets/images/about.svg" alt="" class="mobile-tab-icon" />
+          <span>About</span>
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </body>
 </html>
-
