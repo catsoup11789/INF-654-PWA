@@ -3,82 +3,211 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Void | History Log</title>
+    <meta name="theme-color" content="#020307" />
     <meta name="description" content="The Void history log with sample Marvin decisions." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <title>The Void | History Log</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="assets/icons/the-void-icon-192.png" />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/app.js"></script>
   </head>
-  <body>
-    <main class="app-shell container">
-      <section class="top-strip">
+  <body class="void-history">
+    <div class="page-frame">
+      <header class="topbar">
         <div class="brand-lockup">
-          <div>
-            <h1 class="page-title">History Log</h1>
-            <p class="page-subtitle">A running log of previous questions, Marvin’s responses, and the exact moment your dignity left the building.</p>
-          </div>
+          <img src="assets/images/the-void.png" alt="The Void" class="brand-logo" />
+          <span class="mobile-brand-mark" aria-hidden="true"></span>
+          <span class="mobile-brand-word" aria-hidden="true">the void.</span>
         </div>
-      </section>
 
-      <section class="content-grid">
-        <article class="surface-panel span-12">
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-pill">
+            <img src="assets/images/ask.svg" alt="" class="nav-icon-svg" />
+            <span>Ask</span>
+          </a>
+          <a href="history.html" class="active nav-pill" aria-current="page">
+            <img src="assets/images/log.svg" alt="" class="nav-icon-svg" />
+            <span>Log</span>
+          </a>
+          <a href="control.html" class="nav-pill">
+            <img src="assets/images/controls.svg" alt="" class="nav-icon-svg" />
+            <span>Controls</span>
+          </a>
+          <a href="about.html" class="nav-pill">
+            <img src="assets/images/about.svg" alt="" class="nav-icon-svg" />
+            <span>About</span>
+          </a>
+        </nav>
 
-          <div class="table-wrap">
-            <table class="striped highlight responsive-table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Question</th>
-                  <th>Marvin’s answer</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Oct 03, 9:14 AM</td>
-                  <td>Should I start homework now?</td>
-                  <td>Probably. Marvin is shocked too.</td>
-                </tr>
-                <tr>
-                  <td>Oct 02, 8:03 PM</td>
-                  <td>Should I buy the neon lamp?</td>
-                  <td>No, but the lamp does sound funnier than your budget.</td>
-                </tr>
-                <tr>
-                  <td>Oct 02, 2:47 PM</td>
-                  <td>What should I eat tonight?</td>
-                  <td>Something with protein, regret, and a low chance of burns.</td>
-                </tr>
-                <tr>
-                  <td>Oct 01, 10:26 AM</td>
-                  <td>Should I call my professor?</td>
-                  <td>Yes. Avoiding it has not improved the outcome.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
+        <div class="status-pill" role="group" aria-label="Application status" data-app-status>
+          <span class="status-field" data-status-field="connection">
+            <span class="status-light" data-connection-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Connection</span>
+              <span class="status-value" data-connection-state>Online</span>
+            </span>
+          </span>
+          <span class="status-field" data-status-field="readiness">
+            <span class="status-light" data-readiness-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Offline readiness</span>
+              <span class="status-value" data-offline-readiness>Saving...</span>
+            </span>
+          </span>
+          <span class="status-announcer" data-status-announcer role="status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+      </header>
+
+      <main class="history-main">
+        <section class="history-intro" aria-labelledby="history-title">
+          <p class="history-eyebrow">History log</p>
+          <h1 id="history-title">A record of indecision.</h1>
+          <p class="history-subtitle">You asked. I answered. We both moved on. Mostly.</p>
         </section>
-    </main>
 
-    <nav class="bottom-tabs" aria-label="Primary navigation">
-      <div class="tabs-grid">
-        <a class="tab-link" href="index.html">
-          <span class="tab-icon" aria-hidden="true">🏠</span>
-          <span class="tab-label">Home</span>
+        <div class="history-layout">
+          <section class="history-log" aria-label="Decision history">
+            <div class="log-summary">
+              <span class="log-count">05 dilemmas resolved</span>
+              <span class="storage-status">
+                <img src="assets/images/history-storage.svg" alt="" />
+                <span>On this device</span>
+              </span>
+            </div>
+
+            <p class="history-storage-error" id="history-storage-error" role="status" aria-live="polite" hidden></p>
+
+            <section class="history-day saved-history-day" id="saved-history-day" aria-labelledby="saved-history-label" hidden>
+              <h2 id="saved-history-label" class="day-label">Saved on this device</h2>
+              <div class="entry-list" id="saved-history-entries"></div>
+            </section>
+
+            <section class="history-day history-day-today" aria-labelledby="today-label">
+              <h2 id="today-label" class="day-label">Today / 18 Oct 2026</h2>
+              <div class="entry-list">
+                <button class="history-entry is-selected" type="button" aria-pressed="true"
+                  data-category="Food" data-sequence="001" data-answer="Order the pizza."
+                  data-commentary="The heat death of the universe can wait. Apparently, dinner cannot.">
+                  <span class="entry-meta">
+                    <span class="entry-meta-primary"><time datetime="2026-10-18T09:41">09:41</time><span class="meta-separator" aria-hidden="true">·</span><span>Food</span></span>
+                    <span class="entry-latest"><span class="latest-dot" aria-hidden="true"></span>Latest</span>
+                  </span>
+                  <span class="entry-copy">
+                    <span class="entry-question">Should I order pizza or cook tonight?</span>
+                    <span class="entry-answer">Order the pizza.</span>
+                  </span>
+                  <img class="entry-arrow" src="assets/images/history-external-link.svg" alt="" />
+                </button>
+
+                <button class="history-entry" type="button" aria-pressed="false"
+                  data-category="Spending" data-sequence="002" data-answer="Close the tab." data-commentary="">
+                  <span class="entry-meta">
+                    <span class="entry-meta-primary"><time datetime="2026-10-18T08:12">08:12</time><span class="meta-separator" aria-hidden="true">·</span><span>Spending</span></span>
+                  </span>
+                  <span class="entry-copy">
+                    <span class="entry-question">Do I really need another pair of shoes?</span>
+                    <span class="entry-answer">Close the tab.</span>
+                  </span>
+                  <img class="entry-arrow" src="assets/images/history-external-link.svg" alt="" />
+                </button>
+              </div>
+            </section>
+
+            <section class="history-day history-day-yesterday" aria-labelledby="yesterday-label">
+              <h2 id="yesterday-label" class="day-label">Yesterday / 17 Oct 2026</h2>
+              <div class="entry-list">
+                <button class="history-entry" type="button" aria-pressed="false"
+                  data-category="Study" data-sequence="003" data-answer="Write the first sentence." data-commentary="">
+                  <span class="entry-meta">
+                    <span class="entry-meta-primary"><time datetime="2026-10-17T21:06">21:06</time><span class="meta-separator" aria-hidden="true">·</span><span>Study</span></span>
+                  </span>
+                  <span class="entry-copy">
+                    <span class="entry-question">Should I start my essay or watch one more episode?</span>
+                    <span class="entry-answer">Write the first sentence.</span>
+                  </span>
+                  <img class="entry-arrow" src="assets/images/history-external-link.svg" alt="" />
+                </button>
+
+                <button class="history-entry" type="button" aria-pressed="false"
+                  data-category="Food" data-sequence="004" data-answer="Eat the noodles." data-commentary="">
+                  <span class="entry-meta">
+                    <span class="entry-meta-primary"><time datetime="2026-10-17T18:32">18:32</time><span class="meta-separator" aria-hidden="true">·</span><span>Food</span></span>
+                  </span>
+                  <span class="entry-copy">
+                    <span class="entry-question">Noodles or the leftovers in my fridge?</span>
+                    <span class="entry-answer">Eat the noodles.</span>
+                  </span>
+                  <img class="entry-arrow" src="assets/images/history-external-link.svg" alt="" />
+                </button>
+
+                <button class="history-entry" type="button" aria-pressed="false"
+                  data-category="The unknown" data-sequence="005" data-answer="Stay in. The stars will cope." data-commentary="">
+                  <span class="entry-meta">
+                    <span class="entry-meta-primary"><time datetime="2026-10-17T14:09">14:09</time><span class="meta-separator" aria-hidden="true">·</span><span>The unknown</span></span>
+                  </span>
+                  <span class="entry-copy">
+                    <span class="entry-question">Should I go out tonight?</span>
+                    <span class="entry-answer">Stay in. The stars will cope.</span>
+                  </span>
+                  <img class="entry-arrow" src="assets/images/history-external-link.svg" alt="" />
+                </button>
+              </div>
+            </section>
+
+            <p class="end-of-log">End of log. A mercifully short read.</p>
+          </section>
+
+          <aside class="history-detail" aria-label="Selected decision" aria-live="polite">
+            <section class="verdict-panel">
+              <p class="verdict-label"><span id="selected-status">Latest</span> / <span id="selected-category">Food</span> / <span id="selected-sequence">001</span></p>
+              <p class="verdict-answer" id="selected-answer">Order the pizza.</p>
+              <p class="verdict-commentary" id="selected-commentary">The heat death of the universe can wait. Apparently, dinner cannot.</p>
+              <div class="verdict-divider" aria-hidden="true"></div>
+              <button class="read-aloud" type="button" aria-pressed="false">
+                <img src="assets/images/history-read-aloud.svg" alt="" />
+                <span class="read-aloud-label">Read aloud</span>
+                <span class="read-duration">~ 6 sec</span>
+              </button>
+              <p class="history-voice-feedback" role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="memory-note">
+              <h2>A note on memory</h2>
+              <p>Your question history is saved on this device. Clear it in Controls. Clearing browser or app data can also remove it.</p>
+            </section>
+
+            <a class="ask-again" href="index.html">
+              <span>Ask another question</span>
+              <img src="assets/images/history-external-link.svg" alt="" />
+            </a>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer-meta history-footer">
+        <span>The Void / v.1.0 / cosmically unnecessary</span>
+        <span>Low stakes. Local orbit. Large sigh.</span>
+      </footer>
+
+      <nav class="mobile-tabbar" aria-label="Main navigation">
+        <a href="index.html" class="mobile-tab">
+          <img src="assets/images/orbit.svg" alt="" class="mobile-tab-icon" />
+          <span>Ask</span>
         </a>
-        <a class="tab-link active" href="history.html" aria-current="page">
-          <span class="tab-icon" aria-hidden="true">📜</span>
-          <span class="tab-label">History</span>
+        <a href="history.html" class="mobile-tab active" aria-current="page">
+          <img src="assets/images/log.svg" alt="" class="mobile-tab-icon" />
+          <span>Log</span>
         </a>
-        <a class="tab-link" href="control.html">
-          <span class="tab-icon" aria-hidden="true">⚙️</span>
-          <span class="tab-label">Control</span>
+        <a href="control.html" class="mobile-tab">
+          <img src="assets/images/controls.svg" alt="" class="mobile-tab-icon" />
+          <span>Controls</span>
         </a>
-        <a class="tab-link" href="about.html">
-          <span class="tab-icon" aria-hidden="true">🛰️</span>
-          <span class="tab-label">About</span>
+        <a href="about.html" class="mobile-tab">
+          <img src="assets/images/about.svg" alt="" class="mobile-tab-icon" />
+          <span>About</span>
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </body>
 </html>
-
