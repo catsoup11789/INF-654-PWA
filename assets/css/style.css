@@ -2467,10 +2467,6 @@ input {
   padding: 16px 0;
 }
 
-.voice-preview-row {
-  align-items: flex-start;
-}
-
 .setting-copy {
   display: flex;
   min-width: 0;
@@ -2491,45 +2487,6 @@ input {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.65;
-}
-
-.voice-preview-wrap {
-  flex: 0 0 320px;
-  min-width: 0;
-}
-
-.voice-preview {
-  display: block;
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--accent);
-  font: 600 13px/1 "Inter", sans-serif;
-  cursor: pointer;
-}
-
-.voice-preview:hover,
-.voice-preview:focus-visible {
-  border-color: #46563a;
-  color: var(--text);
-}
-
-.voice-preview:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-
-.voice-preview:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.voice-preview-wrap .voice-preview {
-  min-height: 40px;
-  padding: 0 14px;
 }
 
 .setting-switch {
@@ -2922,11 +2879,6 @@ input {
     padding: 14px 0;
   }
 
-  .voice-preview-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .setting-copy {
     gap: 5px;
   }
@@ -2946,14 +2898,6 @@ input {
     flex-basis: 40px;
   }
 
-  .voice-preview-wrap {
-    width: 100%;
-    flex-basis: auto;
-  }
-
-  .voice-preview {
-    width: 100%;
-  }
 
   .switch-visual {
     width: 40px;
