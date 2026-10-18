@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Void | Offline</title>
+    <meta name="description" content="The Void is offline and cannot reach the network right now." />
+    <meta name="theme-color" content="#020307" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="assets/icons/the-void-icon-192.png" />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/app.js"></script>
+  </head>
+  <body class="void-offline">
+    <div class="page-frame">
+      <header class="offline-header">
+        <div class="brand-lockup">
+          <img src="assets/images/the-void.png" alt="The Void" class="brand-logo" />
+          <span class="mobile-brand-mark" aria-hidden="true"></span>
+          <span class="mobile-brand-word" aria-hidden="true">the void.</span>
+        </div>
+        <div class="status-pill" role="group" aria-label="Application status" data-app-status>
+          <span class="status-field" data-status-field="connection">
+            <span class="status-light" data-connection-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Connection</span>
+              <span class="status-value" data-connection-state>Online</span>
+            </span>
+          </span>
+          <span class="status-field" data-status-field="readiness">
+            <span class="status-light" data-readiness-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Offline readiness</span>
+              <span class="status-value" data-offline-readiness>Saving...</span>
+            </span>
+          </span>
+          <span class="status-announcer" data-status-announcer role="status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+      </header>
+
+      <main class="offline-main">
+        <div class="offline-layout">
+          <section class="offline-transmission" aria-label="Marvin's offline transmission">
+            <p class="offline-transmission-label">
+              <span>Local orbit / no uplink</span>
+              <span>Still sighing</span>
+            </p>
+            <div class="offline-core">
+              <img src="assets/images/supercomputer-a.jpg" alt="Marvin's orbital core" class="offline-core-image" />
+              <div class="offline-core-meta">
+                <span>M / RVN—01</span>
+                <span>Existentially available</span>
+              </div>
+              <div class="offline-core-footnote">
+                <span>Enthusiasm: 0.003%</span>
+                <span class="signal-bars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </span>
+              </div>
+            </div>
+            <blockquote class="offline-quote">“A whole universe. Not a single bar.”</blockquote>
+          </section>
+
+          <section class="offline-recovery" aria-labelledby="offline-title">
+            <div class="offline-recovery-heading">
+              <p class="offline-eyebrow">Offline / page not saved</p>
+              <h1 id="offline-title"><span>Even the void</span><span>has dead zones.</span></h1>
+            </div>
+            <p class="offline-message">You're offline, and this page wasn't saved on your device. Reconnect, then try again.</p>
+            <p class="offline-online-message" id="offline-online-message" role="status" aria-live="polite" hidden>You appear to be back online. Try this page again.</p>
+            <div class="offline-actions">
+              <div class="offline-retry">
+                <button class="offline-retry-button" type="button">
+                  <span>Try again</span>
+                  <picture>
+                    <source media="(max-width: 620px)" srcset="assets/images/offline-retry-mobile.svg" />
+                    <img src="assets/images/offline-retry-desktop.svg" alt="" />
+                  </picture>
+                </button>
+              </div>
+              <button class="offline-back" id="offline-back" type="button" disabled>
+                <span id="offline-back-label">Checking saved pages...</span>
+                <picture>
+                  <source media="(max-width: 620px)" srcset="assets/images/offline-back-mobile.svg" />
+                  <img src="assets/images/offline-back-desktop.svg" alt="" />
+                </picture>
+              </button>
+            </div>
+            <aside class="offline-reassurance">
+              <div class="offline-reassurance-heading">
+                <picture>
+                  <source media="(max-width: 620px)" srcset="assets/images/offline-reassurance-mobile.svg" />
+                  <img src="assets/images/offline-reassurance-desktop.svg" alt="" />
+                </picture>
+                <h2>Still here. Still unimpressed.</h2>
+              </div>
+              <p>The parts of The Void already saved on your device can still work offline. No signal required for a sigh.</p>
+            </aside>
+          </section>
+        </div>
+      </main>
+
+      <footer class="offline-footer">
+        <span class="desktop-footer-copy">The Void / v.1.0 / cosmically unnecessary</span>
+        <span class="desktop-footer-copy">Low stakes. Local orbit. Large sigh.</span>
+        <span class="mobile-footer-copy">The Void / v.1.0 / cosmically unnecessary</span>
+      </footer>
+    </div>
+  </body>
+</html>
+
