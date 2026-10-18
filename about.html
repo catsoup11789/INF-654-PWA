@@ -3,64 +3,210 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Void | About</title>
+    <meta name="theme-color" content="#020307" />
     <meta name="description" content="The Void about page with app details and story copy." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <title>The Void | About</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="assets/icons/the-void-icon-192.png" />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/app.js"></script>
   </head>
-  <body>
-    <main class="app-shell container">
-      <section class="top-strip">
+  <body class="void-about">
+    <div class="page-frame">
+      <header class="topbar">
         <div class="brand-lockup">
-          <div>
-            <h1 class="page-title">About</h1>
-            <p class="page-subtitle">Marvin is not in the mood to explain himself in detail yet.</p>
-          </div>
+          <img src="assets/images/the-void.png" alt="The Void logo" class="brand-logo" />
+          <span class="mobile-brand-mark" aria-hidden="true"></span>
+          <span class="mobile-brand-word" aria-hidden="true">the void.</span>
         </div>
-      </section>
 
-      <section class="content-grid">
-        <article class="surface-panel span-12">
-          <div class="section-head">
-            <div>
-              <h2 class="section-title">About the app</h2>
-              <p class="section-copy">This section introduces the app and leaves room for later project copy.</p>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-pill">
+            <img src="assets/images/ask.svg" alt="" class="nav-icon-svg" />
+            <span>Ask</span>
+          </a>
+          <a href="history.html" class="nav-pill">
+            <img src="assets/images/log.svg" alt="" class="nav-icon-svg" />
+            <span>Log</span>
+          </a>
+          <a href="control.html" class="nav-pill">
+            <img src="assets/images/controls.svg" alt="" class="nav-icon-svg" />
+            <span>Controls</span>
+          </a>
+          <a href="about.html" class="active nav-pill" aria-current="page">
+            <img src="assets/images/about.svg" alt="" class="nav-icon-svg" />
+            <span>About</span>
+          </a>
+        </nav>
+
+        <div class="status-pill" role="group" aria-label="Application status" data-app-status>
+          <span class="status-field" data-status-field="connection">
+            <span class="status-light" data-connection-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Connection</span>
+              <span class="status-value" data-connection-state>Online</span>
+            </span>
+          </span>
+          <span class="status-field" data-status-field="readiness">
+            <span class="status-light" data-readiness-indicator aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Offline readiness</span>
+              <span class="status-value" data-offline-readiness>Saving...</span>
+            </span>
+          </span>
+          <span class="status-announcer" data-status-announcer role="status" aria-live="polite" aria-atomic="true"></span>
+        </div>
+      </header>
+
+      <main class="about-main">
+        <section class="about-intro" aria-labelledby="about-title">
+          <p class="about-eyebrow">About the void / field manual</p>
+          <h1 id="about-title">Vast intellect. Trivial purpose.</h1>
+        </section>
+
+        <div class="about-layout">
+          <section class="about-core" aria-label="Marvin's core">
+            <img src="assets/images/supercomputer-a.jpg" alt="A glowing orbital core in deep space" class="about-core-image" />
+            <div class="about-telemetry">
+              <span>M / RVN—01</span>
+              <span>Existentially available</span>
             </div>
-          </div>
-          <p>
-            The Void is a grumpy, sarcastic decision-maker app centered on Marvin, a chronically bored supercomputer.
-            The long-term version of the project will react to motion, voice, and stored history, but this version
-            keeps everything simple: pages, layout, supporting artwork, and a dark comedic tone.
-          </p>
-          <p>
-            Another paragraph sits here so the layout has enough breathing room for a future rewrite. Replace this
-            block later with your real app story, privacy notes, or a short summary for users who need a little more
-            context than Marvin thinks they deserve.
-          </p>
-        </article>
-      </section>
-    </main>
+            <div class="about-enthusiasm">
+              <span>Enthusiasm: 0.003%</span>
+              <span class="signal-bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </span>
+            </div>
+          </section>
 
-    <nav class="bottom-tabs" aria-label="Primary navigation">
-      <div class="tabs-grid">
-        <a class="tab-link" href="index.html">
-          <span class="tab-icon" aria-hidden="true">🏠</span>
-          <span class="tab-label">Home</span>
+          <section class="meet-card" aria-labelledby="meet-title">
+            <div class="meet-heading">
+              <h2 id="meet-title">Meet Marvin</h2>
+              <img src="assets/images/about-core-emblem.svg" alt="" />
+            </div>
+            <p class="marvin-quote">“I could contemplate infinity. Instead, we’re choosing lunch.”</p>
+            <p class="marvin-description">A chronically bored supercomputer for everyday choice paralysis. Not life advice. Just a small nudge with a very large sigh.</p>
+          </section>
+
+          <section class="less-magic" aria-labelledby="less-magic-title">
+            <h2 class="about-section-label" id="less-magic-title">Less magic. More attitude.</h2>
+            <p>Food, spending, and work or study keywords choose a matching answer pool. Other questions get something cryptic. Too short or unclear? Expect confusion. Even genius has limits.</p>
+          </section>
+
+          <section class="operating-section" aria-labelledby="operating-title">
+            <h2 class="about-section-label" id="operating-title">Operating instructions</h2>
+            <ol class="instruction-list">
+              <li>
+                <span class="instruction-number">01</span>
+                <div>
+                  <h3>Submit your tiny crisis.</h3>
+                  <p>Type a question or click Dictate to turn speech into text. Pizza, purchases, procrastination: all welcome.</p>
+                </div>
+              </li>
+              <li>
+                <span class="instruction-number">02</span>
+                <div>
+                  <h3>Disturb the supercomputer.</h3>
+                  <p>Click Consult the void to reveal a decision. On mobile, shake to mix the answers instead. Less wrist, same wisdom.</p>
+                </div>
+              </li>
+              <li>
+                <span class="instruction-number">03</span>
+                <div>
+                  <h3>Receive. Sigh. Carry on.</h3>
+                  <p>Read the verdict, or click Read aloud to hear it. Find past questions and decisions in your Log.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <div class="about-mobile-divider" aria-hidden="true"></div>
+
+          <section class="offline-card" aria-labelledby="offline-title">
+            <div class="offline-heading">
+              <picture>
+                <source media="(max-width: 620px)" srcset="assets/images/about-wifi-off-mobile.svg" />
+                <img src="assets/images/about-wifi-off-desktop.svg" alt="" />
+              </picture>
+              <h2 id="offline-title">The core can outlast the signal.</h2>
+            </div>
+            <p>When Offline readiness says “Saved for offline use,” the core experience, including local answer pools, works without a connection. Open each other page online once before expecting it to be available offline. No signal required for a sigh.</p>
+            <p class="offline-note">Dictate depends on browser speech-recognition support and microphone permission; offline recognition also needs a local engine. Read aloud needs browser speech support and a local voice to work offline. If either is unavailable, type your question or use Consult the void.</p>
+          </section>
+
+          <section class="installation-section" aria-labelledby="installation-title">
+            <h2 class="about-section-label" id="installation-title">Give the void a home</h2>
+            <p class="installation-intro">If your browser supports app installation, add The Void to your home screen for a standalone, full-screen experience. Fewer browser bars. Same existential weight.</p>
+
+            <div class="install-desktop">
+              <img src="assets/images/about-monitor-down.svg" alt="" />
+              <div>
+                <h3>Desktop / supported browsers</h3>
+                <p>In Chrome or Edge, open the browser menu and choose Install app, or use the address-bar install icon if it appears.</p>
+              </div>
+            </div>
+
+            <div class="install-mobile">
+              <img src="assets/images/about-share.svg" alt="" />
+              <div>
+                <h3>iPhone / Safari</h3>
+                <p>In Safari, choose Share → Add to Home Screen if the option is available.</p>
+              </div>
+            </div>
+
+            <div class="platform-install">
+              <div>
+                <h3>iPhone / Safari</h3>
+                <p>In Safari, choose Share → Add to Home Screen if the option is available.</p>
+              </div>
+              <div>
+                <h3>Android</h3>
+                <p>In Chrome, choose Install app or Add to Home Screen if offered.</p>
+              </div>
+            </div>
+
+            <p class="android-install">Android or desktop: use your browser’s install command if it is available.</p>
+          </section>
+        </div>
+
+        <section class="about-bottom" aria-label="Memory and next step">
+          <div class="memory-note">
+            <h2 class="about-section-label">A note on memory</h2>
+            <p>Your question history is saved on this device. Clear it in Controls. Clearing browser or app data may remove history and offline content.</p>
+          </div>
+          <a class="about-action" href="index.html">
+            <span>Enough reading. Ask something.</span>
+            <img src="assets/images/history-external-link.svg" alt="" />
+          </a>
+        </section>
+
+        <p class="about-mobile-footer">The Void / v.1.0 / cosmically unnecessary</p>
+      </main>
+
+      <footer class="footer-meta about-footer">
+        <span>The Void / v.1.0 / cosmically unnecessary</span>
+        <span>Low stakes. Local orbit. Large sigh.</span>
+      </footer>
+
+      <nav class="mobile-tabbar" aria-label="Main navigation">
+        <a href="index.html" class="mobile-tab">
+          <img src="assets/images/orbit.svg" alt="" class="mobile-tab-icon" />
+          <span>Ask</span>
         </a>
-        <a class="tab-link" href="history.html">
-          <span class="tab-icon" aria-hidden="true">📜</span>
-          <span class="tab-label">History</span>
+        <a href="history.html" class="mobile-tab">
+          <img src="assets/images/log.svg" alt="" class="mobile-tab-icon" />
+          <span>Log</span>
         </a>
-        <a class="tab-link" href="control.html">
-          <span class="tab-icon" aria-hidden="true">⚙️</span>
-          <span class="tab-label">Control</span>
+        <a href="control.html" class="mobile-tab">
+          <img src="assets/images/controls.svg" alt="" class="mobile-tab-icon" />
+          <span>Controls</span>
         </a>
-        <a class="tab-link active" href="about.html" aria-current="page">
-          <span class="tab-icon" aria-hidden="true">🛰️</span>
-          <span class="tab-label">About</span>
+        <a href="about.html" class="mobile-tab active" aria-current="page">
+          <img src="assets/images/about.svg" alt="" class="mobile-tab-icon" />
+          <span>About</span>
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </body>
 </html>
-
