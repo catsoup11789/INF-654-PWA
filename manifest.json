@@ -2,13 +2,13 @@
   "name": "The Void",
   "short_name": "Void",
   "id": "the-void-app",
-  "description": "A moody decision app with a responsive, grumpy interface.",
+  "description": "A simple decision app for making quick choices.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#020307",
-  "background_color": "#020307",
+  "theme_color": "#14191e",
+  "background_color": "#0b0e12",
   "icons": [
     {
       "src": "assets/icons/the-void-icon-16.png",
