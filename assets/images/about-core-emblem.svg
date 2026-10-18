@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="30" height="15" viewBox="0 0 30 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Core emblem">
+<use xlink:href="#stroke0_0_22" fill="#D6ED8B"/>
+<mask id="stroke1_0_22" fill="white">
+<use xlink:href="#stroke0_0_22"/>
+</mask>
+<path d="M30 7.5C30 11.6421 23.2843 15 15 15C6.71573 15 0 11.6421 0 7.5C0 3.35786 6.71573 0 15 0C23.2843 0 30 3.35786 30 7.5ZM4.2 7.5C4.2 10.4823 9.03532 12.9 15 12.9C20.9647 12.9 25.8 10.4823 25.8 7.5C25.8 4.51766 20.9647 2.1 15 2.1C9.03532 2.1 4.2 4.51766 4.2 7.5Z" stroke-width="2" stroke="#D6ED8B" mask="url(#stroke1_0_22)"/>
+</g>
+<defs>
+<path id="stroke0_0_22" d="M30 7.5C30 11.6421 23.2843 15 15 15C6.71573 15 0 11.6421 0 7.5C0 3.35786 6.71573 0 15 0C23.2843 0 30 3.35786 30 7.5ZM4.2 7.5C4.2 10.4823 9.03533 12.9 15 12.9C20.9647 12.9 25.8 10.4823 25.8 7.5C25.8 4.51766 20.9647 2.1 15 2.1C9.03533 2.1 4.2 4.51766 4.2 7.5Z"/>
+</defs>
+</svg>
